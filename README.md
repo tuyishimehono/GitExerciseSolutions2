@@ -75,3 +75,15 @@ $ git log
 
 ### 8. Cherry-Picking Commits
 ```bash
+
+$ git add test5.md
+$ git commit -m "Implemented Test 5"
+$ git log
+$ git checkout main
+$ git cherry-pick 674c9c13550eb916a43ce12cfbe200daf267f6fe
+
+```
+### 9. Visualizing Commit History (Bonus)
+```bash
+
+
