@@ -2,7 +2,7 @@
 # Challenges
 ## Part 1
 
-### Missing File fix
+### 1. Missing File fix
 ``` bash
 
 Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise
@@ -22,7 +22,7 @@ $ git add test4.md
 $ git commit --amend
 
 ```
-### Editing Commit history
+### 2. Editing Commit history
 ```bash
 
 $ git log
@@ -35,7 +35,7 @@ $ git rebase --continue
 Successfully rebased and updated refs/heads/main.
 ```
 
-### Keeping History Tidy - Squashing Commits
+### 3. Keeping History Tidy - Squashing Commits
 ```bash
 $ git rebase -i HEAD~3
 
@@ -43,7 +43,7 @@ $ git log
 
 ```
 
-### Splitting a Commit
+### 4. Splitting a Commit
 ```bash
 $ git status
 $ git reset HEAD~
@@ -53,19 +53,25 @@ $ git add test3.md && git commit -m "Create third file"
 $ git add test4.md && git commit -m "Create fourth file"
 
 ```
-### Advanced Squashing
+### 5. Advanced Squashing
 ```bash
 
 $ git rebase -i HEAD~3
 $ git log
 ```
 
-### Dropping a Commit
+### 6. Dropping a Commit
 ```bash
 $ git add unwanted.txt && git commit -m "Unwanted commit"
 
 $ git rebase -i
 Successfully rebased and updated refs/heads/main.
 ```
-### Reordering Commits
+### 7. Reordering Commits
 ``` bash
+$ git rebase -i HEAD~2
+$ git log
+```
+
+### 8. Cherry-Picking Commits
+```bash
