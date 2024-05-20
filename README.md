@@ -85,5 +85,24 @@ $ git cherry-pick 674c9c13550eb916a43ce12cfbe200daf267f6fe
 ```
 ### 9. Visualizing Commit History (Bonus)
 ```bash
+git log --graph
+```
+
+### 10. Understanding Reflogs (Bonus)
+```bash
+git reflog
+```
+
+## Part 2
+
+### 1. Feature branch creation
+```bash
+$ git checkout -b ft/new-feature
+```
+### 2. Working on the Feature Branch
+```bash
+$ touch feature.txt
+$ git add feature.txt && git commit -m "Implemented core functionality for new feature"
+```
 
 
