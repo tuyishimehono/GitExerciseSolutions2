@@ -104,5 +104,48 @@ $ git checkout -b ft/new-feature
 $ touch feature.txt
 $ git add feature.txt && git commit -m "Implemented core functionality for new feature"
 ```
+### 3. Switching Back and Making More Changes
+```bash
+$ git checkout main
+$ touch readme.txt
+$ git add readme.txt && git commit -m "Updated project readme"
+```
+### 4. Local vs. Remote Branches
+```bash
+$ git checkout main
+$ git merge ft/new-feature
+$ git push origin main
+```
+### 5. Branch Deletion
+```bash
+$ git branch -d ft/new-feature
+```
 
+### 6. Creating a Branch from a Commit
+```bash
+$ git log -1 --pretty=format:%H HEAD~2
+f3e3fabd4520e37a623aedae2a2d06f9544345ef
 
+$ git checkout -b ft/new-branch-from-commit f3e3fabd4520e37a623aedae2a2d06f9544345ef
+Switched to a new branch 'ft/new-branch-from-commit'
+
+```
+### 7. Branch Merging
+```bash
+$ git checkout main
+$ git merge ft/new-branch-from-commit
+Already up to date.
+```
+
+### 8. Branch rebasing
+```bash
+$ git checkout ft/new-branch-from-commit
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
+```
+### 9. Renaming Branches
+```bash
+$ git branch -m ft/new-branch-from-commit ft/improved-branch-name
+
+~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
+```
