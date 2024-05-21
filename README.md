@@ -149,3 +149,19 @@ $ git branch -m ft/new-branch-from-commit ft/improved-branch-name
 
 ~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
 ```
+## Part 3
+
+### 1. Stashing Changes
+```bash
+$ git stash
+Saved working directory and index state WIP on main: bd921fa Merge branch 'ft/new-feature'
+```
+
+### 2. Retrieving Stashed Changes
+```bash
+$ git stash list
+$ git stash pop
+
+```
+
+### 3. Branch Merging Conflicts (Continued)
