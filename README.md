@@ -228,14 +228,6 @@ Switched to branch 'main'
 Your branch is ahead of 'origin/main' by 5 commits.
   (use "git push" to publish your local commits)
 
-Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
-$ git mergetool
-
-This message is displayed because 'merge.tool' is not configured.
-See 'git mergetool --tool-help' or 'git help config' for more details.
-'git mergetool' will now attempt to use one of the following tools:
-opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
-No files need merging
 
 Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
 Introductory content
@@ -270,3 +262,5 @@ $ git commit -m "Resolved conflict"
 Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
 $ git merge ft/improved-branch-name
 Already up to date.
+
+```
