@@ -26,11 +26,8 @@ $ git commit --amend
 ```bash
 
 $ git log
-
 $ git rebase -i HEAD~2
-
 $ git commit --amend
-
 $ git rebase --continue
 Successfully rebased and updated refs/heads/main.
 ```
@@ -38,7 +35,6 @@ Successfully rebased and updated refs/heads/main.
 ### 3. Keeping History Tidy - Squashing Commits
 ```bash
 $ git rebase -i HEAD~3
-
 $ git log
 
 ```
@@ -47,9 +43,7 @@ $ git log
 ```bash
 $ git status
 $ git reset HEAD~
-
 $ git add test3.md && git commit -m "Create third file"
-
 $ git add test4.md && git commit -m "Create fourth file"
 
 ```
@@ -63,7 +57,6 @@ $ git log
 ### 6. Dropping a Commit
 ```bash
 $ git add unwanted.txt && git commit -m "Unwanted commit"
-
 $ git rebase -i
 Successfully rebased and updated refs/heads/main.
 ```
@@ -146,7 +139,6 @@ Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
 ### 9. Renaming Branches
 ```bash
 $ git branch -m ft/new-branch-from-commit ft/improved-branch-name
-
 ~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
 ```
 ## Part 3
