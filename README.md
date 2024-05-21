@@ -157,3 +157,116 @@ $ git stash pop
 ```
 
 ### 3. Branch Merging Conflicts (Continued)
+```bash
+$ git add readme.txt && git commit -m "Main branch commit"
+[main 754ab1a] Main branch commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git checkout ft/improved-branch-name
+Switched to branch 'ft/improved-branch-name'
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
+$ git add readme.txt && git commit -m "feature branch commit"
+[ft/improved-branch-name a3dac37] feature branch commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git merge ft/improved-branch-name
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main|MERGING)
+$ git merge ft/improved-branch-name
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main|MERGING)
+$ git add readme.txt
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main|MERGING)
+$ git merge ft/improved-branch-name
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main|MERGING)
+$ git commit -m "conflict resolved"
+[main e775c31] conflict resolved
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git merge ft/improved-branch-name
+Already up to date.
+```
+
+### 4. Resolving Merge Conflicts with a Merge Tool
+```bash
+$ git add readme.txt && git commit -m "Updated readme.txt"
+[main 1a09983] Updated readme.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git checkout ft/improved-branch-name
+Switched to branch 'ft/improved-branch-name'
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
+$ git add readme.txt && git commit -m "Updated readme in feature"
+[ft/improved-branch-name 4caa310] Updated readme in feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 5 commits.
+  (use "git push" to publish your local commits)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+No files need merging
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+Introductory content
+$ git merge ft/improved-branch-name
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main|MERGING)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+readme.txt
+
+Normal merge conflict for 'readme.txt':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main|MERGING)
+$ git add readme.txt
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main|MERGING)
+$ git commit -m "Resolved conflict"
+[main 07f8a82] Resolved conflict
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git merge ft/improved-branch-name
+Already up to date.
