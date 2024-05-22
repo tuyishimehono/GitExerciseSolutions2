@@ -141,6 +141,31 @@ Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
 $ git branch -m ft/new-branch-from-commit ft/improved-branch-name
 ~/OneDrive/Desktop/Gitexercise (ft/improved-branch-name)
 ```
+### 10. Checking Out Detached HEAD
+```bash
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git checkout 3caf8f0
+Note: switching to '3caf8f0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3caf8f0 added readme orig
+M       readme.txt
+```
+
 ## Part 3
 
 ### 1. Stashing Changes
@@ -264,3 +289,65 @@ $ git merge ft/improved-branch-name
 Already up to date.
 
 ```
+### 5. Understanding Detached HEAD State
+```bash
+$ git log --oneline
+3caf8f0 (HEAD -> main) added readme orig
+07f8a82 Resolved conflict
+4caa310 (ft/improved-branch-name) Updated readme in feature
+1a09983 Updated readme.txt
+e775c31 conflict resolved
+a3dac37 feature branch commit
+754ab1a Main branch commit
+d6ccd36 created readme.txt
+bd921fa (origin/main) Merge branch 'ft/new-feature'
+43d345d Updated project readme
+9db22e9 Implemented core functionality for new feature
+f3e3fab Implemented Test 5
+cea2712 chore: Create initial file
+82287b9 Create third and fourth file
+afe711f initial commit
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git checkout 3caf8f0
+Note: switching to '3caf8f0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3caf8f0 added readme orig
+M       readme.txt
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise ((3caf8f0...))
+$ git add readme.txt
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise ((3caf8f0...))
+$ git commit -m "updated readme.txt
+> "
+[detached HEAD fa9e550] updated readme.txt
+ 1 file changed, 4 deletions(-)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise ((fa9e550...))
+$ git checkout -b ft/detached-branch
+Switched to a new branch 'ft/detached-branch'
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (ft/detached-branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 8 commits.
+  (use "git push" to publish your local commits)
+```
+### 6. Ignoring Files/Directories
+
