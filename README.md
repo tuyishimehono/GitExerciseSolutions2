@@ -350,4 +350,66 @@ Your branch is ahead of 'origin/main' by 8 commits.
   (use "git push" to publish your local commits)
 ```
 ### 6. Ignoring Files/Directories
+```bash
+$ git add .
 
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git commit -m "Added gitignore file"
+[main 16399dc] Added gitignore file
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+ create mode 100644 .gitignore
+```
+### 7. Working with Tags
+```bash
+$ git tag v1.0
+```
+
+### 8. Listing and Deleting Tags
+```bash
+$ git tag
+v1.0
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git tag -d v1.0
+Deleted tag 'v1.0' (was 16399dc)
+
+```
+### 9. Pushing Local Work to Remote Repositories
+```bash
+
+$ git add README.md
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git commit -m "Updated README"
+[main bb43e8e] Updated README
+ 1 file changed, 2 insertions(+)
+
+Honorine@Tuyishime-PC MINGW64 ~/OneDrive/Desktop/Gitexercise (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 314 bytes | 157.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:tuyishimehono/Git_Exercise.git
+   16399dc..bb43e8e  main -> main
+```
+### 10. Pulling Changes from Remote Repositories
+```bash
+$ git pull origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 962 bytes | 64.00 KiB/s, done.
+From github.com:tuyishimehono/Git_Exercise
+ * branch            main       -> FETCH_HEAD
+   bb43e8e..84a8438  main       -> origin/main
+Updating bb43e8e..84a8438
+Fast-forward
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+```
